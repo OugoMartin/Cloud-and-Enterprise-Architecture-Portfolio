@@ -1,42 +1,58 @@
-# 03 — Scalable Cloud Architecture for E-Commerce
+# 03 — AWS Web Application Deployment & Scalable E-Commerce Architecture
 
 ## Objective
-Architect a resilient and cost-conscious e-commerce platform using cloud-native services.
+Demonstrate hands-on AWS web-application deployment and connect the implementation to a scalable, resilient e-commerce architecture.
 
-## AWS Services
-- Amazon EC2
-- Auto Scaling
-- Elastic Load Balancing
-- Amazon RDS
-- Amazon S3
-- AWS Pricing Calculator (cost-efficiency analysis)
+## Hands-On AWS Lab
+The **Deploying a Web Application with AWS** lab integrates VPC, EC2, S3, RDS, and CloudWatch using AWS Free Tier resources.
+
+### Implemented configuration
+- VPC: `MyWebAppVPC` — `10.0.0.0/16`
+- Public subnet: `10.0.1.0/24`
+- Private subnet: `10.0.2.0/24`
+- EC2: `t2.micro`, Amazon Linux 2
+- Apache web server with a custom web page
+- Security Group: SSH from the user's IP and HTTP on port 80
+- S3 bucket for application static assets
+- PostgreSQL RDS `db.t3.micro`, 20 GB gp2, placed in the private subnet
+- CloudWatch monitoring for EC2 and RDS
+- CloudWatch CPU alarm threshold: 70%
+
+## Lab Screenshot Evidence
+The uploaded presentation includes screenshots demonstrating:
+1. VPC/network configuration
+2. Running web application on EC2
+3. S3 bucket and uploaded application file
+4. RDS instance configuration
+5. CloudWatch dashboard and alarms
 
 ## Architecture Concept
 ```text
 Users
   |
   v
-Elastic Load Balancing
+EC2 Web Application
   |
-  v
-EC2 / Auto Scaling
-  |
-  +-----------> Amazon RDS
+  +-----------> Amazon RDS (private subnet)
   |
   +-----------> Amazon S3
+
+Monitoring: Amazon CloudWatch
 ```
 
-The design uses load balancing and automatic scaling to address traffic surges. RDS supports database operations, while S3 provides object storage.
+The broader portfolio extends this implementation concept with Auto Scaling and Elastic Load Balancing for traffic surges.
 
 ## Architecture Goals
-- Scalability during changing traffic demand
-- Resilience through distributed application capacity
-- Managed database operations
-- Object storage separation
+- Secure network separation
+- Compute hosting
+- Managed relational database
+- Object/static storage
+- Resource monitoring and alarms
+- Scalability and resilience
 - Cost awareness
 
 ## Cost Consideration
-The source portfolio states that a cost-efficiency analysis was performed with the AWS Pricing Calculator. It does not provide the original calculator inputs or numerical results, so no cost figures are asserted here.
+The broader architecture portfolio records AWS Pricing Calculator analysis, but the original calculator inputs and numerical results were not supplied. No cost figures are invented here.
 
 ## Portfolio Value
-This case study demonstrates architecture thinking around scalability, availability, cloud service selection, and cost trade-offs.
+This case study now combines a documented hands-on AWS deployment with architecture-level scalability planning, giving recruiters evidence of both implementation and design thinking.

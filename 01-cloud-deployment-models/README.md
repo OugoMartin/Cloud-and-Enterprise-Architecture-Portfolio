@@ -1,28 +1,32 @@
 # 01 — Comparative Analysis of Cloud Deployment Models
 
 ## Objective
-Evaluate the benefits and limitations of **public, private, and hybrid cloud** deployment models in practical business environments.
+Evaluate the benefits and limitations of **public, private, and hybrid cloud** deployment models and demonstrate understanding of AWS global infrastructure.
 
 ## Method
-The original portfolio used **SWOT analysis** and considered criteria including performance, cost-effectiveness, scalability, and security.
+The portfolio uses SWOT-style architecture evaluation and considers performance, cost-effectiveness, scalability, security, geographic distribution, resilience, and compliance.
 
-## Business Problem
-Organizations must select deployment models that fit workload requirements, security expectations, scalability needs, and cost constraints. The decision is not purely technical; it affects governance and operations as well.
+## Hands-On Lab Evidence
+The supporting AWS lab presentation includes console screenshots demonstrating exploration of **AWS Regions and Availability Zones**. The lab connects region selection to latency, availability, resilience, compliance, and data-sovereignty considerations.
 
-## Models Evaluated
-- **Public Cloud:** provider-operated cloud infrastructure and implications for scalability, cost, and security.
-- **Private Cloud:** dedicated environments and implications for control, security, cost, and infrastructure responsibility.
-- **Hybrid Cloud:** combined environments supporting workloads with different operational or security requirements.
+### Screenshot evidence captured
+- AWS console view of available geographic Regions
+- AWS Availability Zone exploration
+- Supporting AWS global-infrastructure architecture visual
+
+These screenshots are retained in the original lab presentation and are documented here as hands-on evidence.
 
 ## Decision Framework
-- Performance
+- Performance and latency
 - Cost-effectiveness
 - Scalability
 - Security
+- Availability and resilience
+- Compliance and data sovereignty
 - Business/environment fit
 
 ## Portfolio Value
-This project demonstrates the ability to evaluate cloud infrastructure options and communicate architecture trade-offs in support of technology decisions.
+This project demonstrates the ability to evaluate cloud infrastructure options and connect AWS geographic architecture to workload placement and resilience decisions.
 
 ## Evidence Status
-The source portfolio documents the objective, SWOT method, evaluation criteria, and project relevance. It does not contain the complete underlying SWOT matrix, quantitative scoring model, or raw cost data; those are therefore not fabricated here.
+The source portfolio documents the evaluation method and criteria, while the AWS Global Infrastructure lab adds console-based evidence of hands-on AWS exploration. Quantitative scoring or measured latency results are not claimed where they were not supplied.

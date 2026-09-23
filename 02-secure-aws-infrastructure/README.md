@@ -1,35 +1,54 @@
 # 02 — Secure AWS Infrastructure Design
 
 ## Objective
-Design a cloud architecture with security controls and consideration for industry compliance requirements.
+Build and document a secure AWS network architecture with isolated database resources, controlled network access, encryption, and protected credential management.
+
+## Hands-On AWS Lab
+The **Configuring a Secure VPC & Encrypted RDS in AWS Free Tier** lab provides implementation evidence for this case study.
+
+### Lab configuration
+- VPC: `MySecureVPC` — `10.0.0.0/16`
+- Public subnet: `10.0.1.0/24`
+- Private subnet: `10.0.2.0/24`
+- Internet Gateway connected to the public route
+- Web Security Group: HTTP/HTTPS plus SSH restricted to the user's IP
+- PostgreSQL RDS `db.t3.micro` in the private subnet
+- RDS encryption enabled with AWS-managed KMS
+- Database credentials stored as SSM Parameter Store `SecureString` values
+
+## Lab Screenshot Evidence
+The uploaded lab contains screenshots documenting:
+1. Public subnet configuration
+2. Private subnet configuration
+3. Internet Gateway configuration
+4. Security Group configuration
+5. Encrypted RDS configuration
+6. Secure VPC/RDS architecture
 
 ## Technologies and Controls
-- AWS Identity and Access Management (IAM)
+- Amazon VPC
+- Amazon RDS
+- AWS IAM
+- AWS Systems Manager Parameter Store
+- AWS KMS
 - Security Groups
-- AWS CloudTrail
-- Encryption for data at rest and in transit
-- Role-based access controls
-- Audit logging
-
-## Architecture Approach
-The portfolio describes a **multi-tier cloud architecture** built around security best practices. The design emphasizes least-privilege access, encryption, activity monitoring, role-based controls, and auditability.
+- Encryption at rest
+- Network isolation
+- Secure credential storage
 
 ## Key Design Challenge
-A central architecture challenge was balancing stringent access control with system usability.
-
-## Response
-The documented approach used **role-based access controls and audit logging mechanisms** to maintain controlled access while preserving operational usability.
+The lab identifies subnet routing as a primary implementation challenge: internet access had to remain available to the public subnet while the database remained isolated in the private subnet.
 
 ## Security Principles Demonstrated
-1. Least privilege
-2. Controlled network access
-3. Encryption at rest and in transit
-4. Activity monitoring
-5. Audit logging
-6. Role-based access
+1. Network segmentation
+2. Least exposure
+3. Restricted administrative access
+4. Database encryption
+5. Private database placement
+6. Protected credential management
 
 ## Portfolio Value
-The case study demonstrates understanding of cloud security principles relevant to protecting data, maintaining integrity, supporting governance, and designing secure cloud environments.
+This project now contains documented hands-on evidence rather than only a conceptual architecture. It demonstrates practical AWS networking, database security, encryption, and secrets-management experience.
 
 ## Evidence Boundary
-The source portfolio describes the architecture and controls conceptually. It does not include deployable Terraform/CloudFormation, exact VPC/subnet CIDRs, IAM policies, or production configuration values. This repository therefore does not claim that those artifacts were implemented.
+The lab supports the configurations listed above. The repository does not claim Terraform/CloudFormation automation or production deployment because those artifacts were not supplied.
